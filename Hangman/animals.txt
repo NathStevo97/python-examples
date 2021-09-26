@@ -1,0 +1,14 @@
+cat
+dog
+tiger
+lion
+rhino
+giraffe
+elephant
+camel
+buffalo
+jaguar
+leopard
+honey badger
+fox
+tapir
