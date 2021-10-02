@@ -10,86 +10,6 @@ guessedLetters = []
 global missingLetters
 missingLetters = 0
 
-#################################################
-# Define Hangman Diagrams
-#################################################
-diagrams = ['''
-
-
-
-
-
-=========''','''
-      
-      
-      |
-      |
-      |
-=========''','''
-
-      |
-      |
-      |
-      |
-      |
-      |
-=========''', '''
-
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
 
 ############################################################################################################################
 # Function - Category & Word Selection:
@@ -125,44 +45,133 @@ def letterPrint(secret):
              global missingLetters
              missingLetters += 1
 
+#################################################
+# Function -  Guess Input
+#################################################
+def guess():
+      print("\n\nguessed letters  ", guessedLetters)
+      guess = input("\nguess a letter  ") #while the attempts limit hasn't been met, the user will be asked to guess a letter
+      guess = guess.lower()
+      if len(guess)!=1:
+            print("please enter 1 letter only")
+      elif guess in guessedLetters:
+            print("you have already guessed that letter ")
+      elif guess not in (secretWord): #if the user guesses a letter not in the word, the guess will be added to incorrectletters and attemtps will increase by 1
+            global attempts
+            attempts+=1
+            print("incorrect, you have", maxAttempts-1-attempts, "goes remaining")
+      guessedLetters.append(guess)
+
+#################################################
+# Function -  Hangman Game
+#################################################
 
 def hangman():
-      maxAttempts = len(diagrams)
+      diagrams = ['''
+
+
+
+
+
+      =========''','''
+            
+            
+            |
+            |
+            |
+      =========''','''
+
+            |
+            |
+            |
+            |
+            |
+            |
+      =========''', '''
+
+      +---+
+      |   |
+            |
+            |
+            |
+            |
+      =========''', '''
+
+      +---+
+      |   |
+      O   |
+            |
+            |
+            |
+      =========''', '''
+
+        +---+
+        |   |
+        O   |
+        |   |
+            |
+            |
+      =========''', '''
+
+        +---+
+        |   |
+        O   |
+       /|   |
+            |
+            |
+      =========''', '''
+
+        +---+
+        |   |
+        O   |
+       /|\  |
+            |
+            |
+      =========''', '''
+
+        +---+
+        |   |
+        O   |
+       /|\  |
+       /    |
+            |
+      =========''', '''
+
+        +---+
+        |   |
+        O   |
+       /|\  |
+       / \  |
+            |
+      =========''']
+      global maxAttempts
+      maxAttempts = len(diagrams) # define variable to save writing len(diagrams) all the time
+      global attempts
       attempts=0
-      secretWord = wordSelect()
+      global secretWord
+      secretWord = wordSelect() # call wordSelect function to select random word from chosen category
       secretLength=len(secretWord)
       global guessedLetters
-      guessedLetters = []
+      guessedLetters = [] # blank at the start of each game as expected
       while attempts < maxAttempts:
             global missingLetters
             missingLetters=0
-            print(diagrams[attempts])
-            letterPrint(secretWord)
-            if missingLetters == 0:
+            print(diagrams[attempts]) # based on whatever value attempts is, print the corresponding diagram
+            letterPrint(secretWord) # call function to print out secret as blanks based on secretWord
+            if missingLetters == 0: # winning condition
                   print("\nyes!, you have guessed", secretWord, "correctly")   
-            if attempts == len(diagrams) - 1:
+            if attempts == len(diagrams) - 1: # losing condition
                   print("\nyou lose!, the secret word was", secretWord)
-            if missingLetters == 0 or attempts == maxAttempts -1:
+            if missingLetters == 0 or attempts == maxAttempts -1: # condition for win or lose
                   print('\n Game Complete - You Can Have Anther Go or Quit:')
                   playagain = input("\n Would You Like To Play Again? y or n ") #once the user has won or lost the game, the user is to be asked if they want to play again
                   if playagain == "y":
-                        hangman()
+                        hangman() # restart the game
                   elif playagain == "n":
+                        print("Thanks for playing, Goodbye!")
                         break #if the user enters "n" to play again, the game will end
-                  elif playagain != "y" or "n":
+                  elif playagain != "y" or "n": # will do nothing until a valid input has been received if game is over
                         print("please enter y or n")
                         continue
-            
-            print("\n\nguessed letters  ", guessedLetters)
-            guess = input("\nguess a letter  ") #while the attempts limit hasn't been met, the user will be asked to guess a letter
-            guess = guess.lower()
-            if len(guess)!=1:
-                  print("please enter 1 letter only")
-            elif guess in guessedLetters:
-                  print("you have already guessed that letter ")
-            elif guess not in (secretWord): #if the user guesses a letter not in the word, the guess will be added to incorrectletters and attemtps will increase by 1
-                  attempts+=1
-                  print("incorrect, you have", len(diagrams)-1-attempts, "goes remaining")
-            guessedLetters.append(guess)
-missingLetters = 0
+            guess()
 hangman()
