@@ -10,6 +10,12 @@ Set of tutorial scripts developed following Tech with Tim's video tutorials; use
 
 ---
 
+## Confluence_Documentation
+
+Small script to test out functionality for using the Atlassian Confluence API; a big part of my job role and to help research with it to allow automated page uploads/management of pages.
+
+---
+
 ## Directory Sync
 
 Small script to sync two directories using the dirsync module. Developed out of curiosity following the development of a similar powershell script.
