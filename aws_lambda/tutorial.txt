@@ -1,0 +1,4 @@
+Amazon S3 Object Lambda Tutorial
+You can add your own code to process data retrieved from S3 before returning it to an application
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/tutorial-s3-object-lambda-uppercase.html
