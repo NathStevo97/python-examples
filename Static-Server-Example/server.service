@@ -1,0 +1,11 @@
+[Unit]
+Description=python_server
+
+[Service]
+User=pythadmn
+
+WorkingDirectory=/home/pythadmn
+ExecStart=/usr/bin/python /home/pythadmn/app.py
+
+[Install]
+WantedBy=multi-user.target
