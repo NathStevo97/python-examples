@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "flask-chat-with-db"
+version = "0.1.0"
+description = ""
+authors = ["NathStevo97 <natstephenson15@gmail.com>"]
+readme = "README.md"
+packages = [{include = "*", from="src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.0.2"
+pymongo = "^4.6.3"
+flask-socketio = "^5.3.6"
+bson = "^0.5.10"
+flask-login = "^0.6.3"
+werkzeug = "^3.0.2"
+eventlet = "^0.36.1"
+black = "^24.3.0"
+flake8 = "^7.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
