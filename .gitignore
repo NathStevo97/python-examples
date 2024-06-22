@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 Turtle/Cute_Example.py
+
+data-science/machine-learning/datasets/*
