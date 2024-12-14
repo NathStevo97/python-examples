@@ -9,17 +9,17 @@ def getObject(bucket, key):
     print("\n")
 
 print('Original object from the S3 bucket:')
-# Replace the two input parameters of getObject() below with 
-# the S3 bucket name that you created in Step 1 and 
+# Replace the two input parameters of getObject() below with
+# the S3 bucket name that you created in Step 1 and
 # the name of the file that you uploaded to the S3 bucket in Step 2
-getObject("nathan-tutorial-bucket", 
+getObject("nathan-tutorial-bucket",
           "tutorial.txt")
 
 print('Object transformed by S3 Object Lambda:')
-# Replace the two input parameters of getObject() below with 
+# Replace the two input parameters of getObject() below with
 # the ARN of your S3 Object Lambda access point that you saved earlier and
 # the name of the file with the transformed data (which in this case is
-# the same as the name of the file that you uploaded to the S3 bucket 
+# the same as the name of the file that you uploaded to the S3 bucket
 # in Step 2)
-getObject("arn:aws:s3-object-lambda:eu-west-2:862772511843:accesspoint/nathan-object-lambda-access-point",
-          "tutorial.txt")           
+getObject("arn:aws:s3-object-lambda:us-east-1:862772511843:accesspoint/nathan-object-lambda-access-point",
+          "tutorial.txt")
