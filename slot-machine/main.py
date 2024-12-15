@@ -1,25 +1,16 @@
 import random
 
-MAX_LINES = 3 # Python convention - caps = will not change
+MAX_LINES = 3  # Python convention - caps = will not change
 MAX_BET = 100
 MIN_BET = 1
 
 ROWS = 3
 COLS = 3
 
-symbol_count = {
-    "A": 2,
-    "B": 4,
-    "C": 6,
-    "D": 8
-}
+symbol_count = {"A": 2, "B": 4, "C": 6, "D": 8}
 
-symbol_value = {
-    "A": 5,
-    "B": 4,
-    "C": 3,
-    "D": 2
-}
+symbol_value = {"A": 5, "B": 4, "C": 3, "D": 2}
+
 
 def check_winnings(columns, lines, bet, values):
     winnings = 0
@@ -56,6 +47,7 @@ def get_slot_machine_spin(rows, cols, symbols):
 
     return columns
 
+
 def print_slot_machine(columns):
     for row in range(len(columns[0])):
         for i, column in enumerate(columns):
@@ -65,6 +57,7 @@ def print_slot_machine(columns):
                 print(column[row], end="")
 
         print()
+
 
 def deposit():
     while True:
@@ -79,12 +72,15 @@ def deposit():
             print("Please enter a number")
     return amount
 
+
 def get_number_of_lines():
     while True:
-        lines = input("How many lines do you want to bet on? (1-" + str(MAX_LINES) + ")? ")
+        lines = input(
+            "How many lines do you want to bet on? (1-" + str(MAX_LINES) + ")? "
+        )
         if lines.isdigit():
             lines = int(lines)
-            if  1 <= lines <= MAX_LINES:
+            if 1 <= lines <= MAX_LINES:
                 break
             else:
                 print("Amount must be beteween (1-" + str(MAX_LINES) + ").")
@@ -92,18 +88,20 @@ def get_number_of_lines():
             print("Please enter a number")
     return lines
 
+
 def get_bet():
     while True:
         bet = input("How much do you want to bet? (£) ")
         if bet.isdigit():
             bet = int(bet)
-            if  MIN_BET <= bet <= MAX_BET:
+            if MIN_BET <= bet <= MAX_BET:
                 break
             else:
                 print(f"Amount must be beteween ${MIN_BET} - ${MAX_BET} (£)")
         else:
             print("Please enter a number")
     return bet
+
 
 def spin(balance):
     balance = deposit()
@@ -113,11 +111,15 @@ def spin(balance):
         total_bet = bet * lines
 
         if total_bet > balance:
-            print(f"You do not have enough to bet that amount, your current balance is ${balance}")
+            print(
+                f"You do not have enough to bet that amount, your current balance is ${balance}"
+            )
         else:
             break
 
-    print(f"You are betting ${bet} on ${lines} lines. Total bet is equal to ${total_bet}")
+    print(
+        f"You are betting ${bet} on ${lines} lines. Total bet is equal to ${total_bet}"
+    )
 
     slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
     print_slot_machine(slots)
@@ -137,5 +139,6 @@ def main():
         balance += spin(balance)
 
     print(f"You left with ${balance}")
+
 
 main()

@@ -1,7 +1,7 @@
 import random
 
 positions = ["rock", "paper", "scissors"]
-compPos = positions[random.randint(0,2)]
+compPos = positions[random.randint(0, 2)]
 
 gameActive = True
 
@@ -30,4 +30,4 @@ while gameActive == True:
         continue
     else:
         gameActive == False
-    compPos = positions[random.randint(0,2)]
+    compPos = positions[random.randint(0, 2)]

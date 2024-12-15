@@ -1,6 +1,7 @@
 import random
 import string
 
+
 def generate_password(min_length, numbers=True, special_characters=True):
     letters = string.ascii_letters
     numbers = string.digits
@@ -34,9 +35,12 @@ def generate_password(min_length, numbers=True, special_characters=True):
         if numbers:
             meets_criteria = has_number
         if special_characters:
-            meets_criteria = meets_criteria and has_special # true if both meets_criteria and has_special are both true
+            meets_criteria = (
+                meets_criteria and has_special
+            )  # true if both meets_criteria and has_special are both true
 
     return pwd
+
 
 min_length = int(input("Enter the minimum length:  "))
 has_number = input("Do you want any numbers (y/n)? ").lower() == "y"

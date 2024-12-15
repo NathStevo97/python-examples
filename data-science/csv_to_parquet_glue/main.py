@@ -2,7 +2,10 @@ import pandas as pd
 import awswrangler as wr
 import boto3
 
-def convert_csv_to_parquet_and_create_glue_table(csv_path, s3_bucket, s3_key, glue_database, glue_table_name):
+
+def convert_csv_to_parquet_and_create_glue_table(
+    csv_path, s3_bucket, s3_key, glue_database, glue_table_name
+):
     # Step 1: Read the CSV file using pandas
     print("Reading CSV file...")
     df = pd.read_csv(csv_path)
@@ -10,15 +13,16 @@ def convert_csv_to_parquet_and_create_glue_table(csv_path, s3_bucket, s3_key, gl
     # Step 2: Save the DataFrame as a Parquet file
     print("Converting to Parquet and uploading to S3...")
     wr.s3.to_parquet(
-        df = df,
-        path = f"s3://{s3_bucket}/{s3_key}",
+        df=df,
+        path=f"s3://{s3_bucket}/{s3_key}",
         dataset=True,
-        database = glue_database,
-        table = glue_table_name,
-        mode="overwrite"
+        database=glue_database,
+        table=glue_table_name,
+        mode="overwrite",
     )
 
     print("Process complete. AWS Glue table created.")
+
 
 # Example usage
 if __name__ == "__main__":
@@ -34,5 +38,5 @@ if __name__ == "__main__":
         s3_bucket=s3_bucket_name,
         s3_key=s3_object_key,
         glue_database=glue_db_name,
-        glue_table_name=glue_table
+        glue_table_name=glue_table,
     )

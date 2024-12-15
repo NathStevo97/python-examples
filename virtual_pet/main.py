@@ -1,8 +1,9 @@
 import random
 import time
 
+
 class Pet:
-    def __init__(self, name, hunger = 0, happiness = 0):
+    def __init__(self, name, hunger=0, happiness=0):
         self.name = name
         self.hunger = hunger
         self.happiness = happiness
@@ -18,6 +19,7 @@ class Pet:
     def status(self):
         print(f"{self.name}'s current hunger level: {self.hunger}")
         print(f"{self.name}'s current happiness level: {self.happiness}")
+
 
 pet = Pet("Bobby")
 

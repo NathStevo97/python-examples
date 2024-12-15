@@ -1,7 +1,8 @@
 import webbrowser
 import os
-print ()
-f = open('helloworld.html', 'w')
+
+print()
+f = open("helloworld.html", "w")
 
 message = """<html>
 <head></head>
@@ -11,5 +12,5 @@ message = """<html>
 f.write(message)
 f.close()
 
-filename = 'file:///'+os.getcwd() +'/' + 'helloworld.html'
+filename = "file:///" + os.getcwd() + "/" + "helloworld.html"
 webbrowser.open_new_tab(filename)

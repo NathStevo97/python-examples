@@ -10,18 +10,26 @@ guesses = []
 while tries > 0:
     guess = int(input(f"\n Please Guess a Number between {rangeMin} and {rangeMax} \n"))
     if guess < rangeMin or guess > rangeMax:
-        print("\n That number is outside of the range, please re-enter a number between {rangeMin} and {rangeMax} \n")
+        print(
+            "\n That number is outside of the range, please re-enter a number between {rangeMin} and {rangeMax} \n"
+        )
     elif str(guess) in guesses:
         print("\n That number has already been guessed, please try again! \n")
     elif guess == number:
-        print(f"\n Correct! Your guess {guess} was the secret number. You guessed it with {tries} tries left!")
+        print(
+            f"\n Correct! Your guess {guess} was the secret number. You guessed it with {tries} tries left!"
+        )
         break
     elif guess < number:
         guesses.append(str(guess))
-        tries-=1
-        print(f"\n Your guess {guess} is below the secret number, you have {tries} tries left!")
+        tries -= 1
+        print(
+            f"\n Your guess {guess} is below the secret number, you have {tries} tries left!"
+        )
     elif guess > number:
         guesses.append(str(guess))
-        tries-=1
-        print(f"\n Your guess {guess} is above the secret number, you have {tries} tries left!")
+        tries -= 1
+        print(
+            f"\n Your guess {guess} is above the secret number, you have {tries} tries left!"
+        )
 print(f"\n Game over! The secret number was {number}")

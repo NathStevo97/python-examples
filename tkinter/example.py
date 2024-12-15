@@ -10,7 +10,8 @@ from datetime import datetime, timedelta
 
 # create the tkinter window
 root = tk.Tk()
-root.title('Clock')
+root.title("Clock")
+
 
 # Display time on the label
 def time(region):
@@ -24,25 +25,25 @@ def time(region):
         hourDiff = 5
         minDiff = 30
     string = datetime.now() + timedelta(hours=hourDiff, minutes=minDiff)
-    string = string.strftime('%H:%M:%S')
+    string = string.strftime("%H:%M:%S")
     print(string)
-    #lbl.config(text = string)
-    #lbl.after(1000, time(region))
+    # lbl.config(text = string)
+    # lbl.after(1000, time(region))
 
-#lbl = tk.Label(root, font = ('calibri', 40, 'bold'), background = 'purple', foreground = 'white')
+
+# lbl = tk.Label(root, font = ('calibri', 40, 'bold'), background = 'purple', foreground = 'white')
 
 # Place clock at the centre of the tkinter window
-#lbl.pack(side=tk.BOTTOM)
+# lbl.pack(side=tk.BOTTOM)
 
 time("uk")
 time("bulgaria")
 time("sriLanka")
 
-#tk.mainloop()
+# tk.mainloop()
 
 
-
-'''
+"""
 from tkinter import *
 
 root = Tk()
@@ -55,4 +56,4 @@ button2 = Button(text="button2")
 button2.pack(side = BOTTOM, pady=3)
 
 root.mainloop()
-'''
+"""
