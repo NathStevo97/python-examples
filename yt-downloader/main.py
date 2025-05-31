@@ -2,17 +2,21 @@ from pytube import YouTube
 from pytube.cli import on_progress
 
 
-def Download(link):
-    youtubeObject = YouTube(
+def main(link):
+    yt_object = YouTube(
         link, use_oauth=True, allow_oauth_cache=True, on_progress_callback=on_progress
     )
-    youtubeObject = youtubeObject.streams.get_highest_resolution()
+    yt_object = yt_object.streams.get_highest_resolution()
     try:
-        youtubeObject.download()
-    except:
-        print("There was a problem downloading the video - please try again")
+        yt_object.download()
+    except Exception as e:
+        print(f"There was a problem downloading the video: {e}")
     print("Download Completed Successfully!")
 
-
-link = input("Enter Youtube link: ")
-Download(link)
+if __name__ == "__main__":
+    yt_link = input("Enter Youtube yt_link: ")
+    if not yt_link.startswith("https://www.youtube.com/watch"):
+        print("Please enter a valid YouTube yt_link.")
+    else:
+        main(yt_link)
+        print("Thank you for using the YouTube Downloader!")
