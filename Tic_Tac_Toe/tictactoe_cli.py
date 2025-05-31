@@ -1,4 +1,4 @@
-""" Make the board using dictionary  """
+"""Make the board using dictionary"""
 
 theBoard = {
     "7": " ",
