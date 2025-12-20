@@ -5,4 +5,3 @@
 ## Getting Started
 
 Install PySpark: `pip install pyspark`
-

@@ -41,8 +41,8 @@ for tr in trs[
     fixed_price = price.a.string
     print(fixed_price)  # price in <a> tag, get string
 
-    prices[fixed_name] = (
-        fixed_price  # append to prices {} with key being fixed name and value being fixed prices
-    )
+    prices[
+        fixed_name
+    ] = fixed_price  # append to prices {} with key being fixed name and value being fixed prices
 
 print(prices)
