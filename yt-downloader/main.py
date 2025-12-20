@@ -1,22 +1,23 @@
-from pytube import YouTube
-from pytube.cli import on_progress
+import yt_dlp
 
-
-def main(link):
-    yt_object = YouTube(
-        link, use_oauth=True, allow_oauth_cache=True, on_progress_callback=on_progress
-    )
-    yt_object = yt_object.streams.get_highest_resolution()
+def download(url, save_path="downloads"):
     try:
-        yt_object.download()
+        ydl_opts = {
+            'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]',
+            'outtmpl': f'{save_path}/%(title)s.%(ext)s',
+            'merge_output_format': 'mp4',
+        }
+        print(f"Starting download for: {url}")
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
+        print("Download Completed Successfully!")
     except Exception as e:
         print(f"There was a problem downloading the video: {e}")
-    print("Download Completed Successfully!")
 
 if __name__ == "__main__":
-    yt_link = input("Enter Youtube yt_link: ")
+    yt_link = input("Enter Youtube link: ")
     if not yt_link.startswith("https://www.youtube.com/watch"):
-        print("Please enter a valid YouTube yt_link.")
+        print("Please enter a valid YouTube link.")
     else:
-        main(yt_link)
+        download(yt_link)
         print("Thank you for using the YouTube Downloader!")

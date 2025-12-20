@@ -16,15 +16,15 @@ root.title("Clock")
 # Display time on the label
 def time(region):
     if region == "uk":
-        hourDiff = 0
-        minDiff = 0
+        hour_diff = 0
+        min_diff = 0
     elif region == "bulgaria":
-        hourDiff = 2
-        minDiff = 0
+        hour_diff = 2
+        min_diff = 0
     elif region == "sriLanka":
-        hourDiff = 5
-        minDiff = 30
-    string = datetime.now() + timedelta(hours=hourDiff, minutes=minDiff)
+        hour_diff = 5
+        min_diff = 30
+    string = datetime.now() + timedelta(hours=hour_diff, minutes=min_diff)
     string = string.strftime("%H:%M:%S")
     print(string)
     # lbl.config(text = string)
