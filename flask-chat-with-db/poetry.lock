@@ -127,13 +127,13 @@ wmi = ["wmi (>=1.5.1)"]
 
 [[package]]
 name = "eventlet"
-version = "0.36.1"
+version = "0.40.4"
 description = "Highly concurrent networking library"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.9"
 files = [
-    {file = "eventlet-0.36.1-py3-none-any.whl", hash = "sha256:e42d0f73b718e654c223a033b8692d1a94d778a6c1deb6c3d21442746f3f727f"},
-    {file = "eventlet-0.36.1.tar.gz", hash = "sha256:d227fe76a63d9e6a6cef53beb8ad0b2dc40a5e7737c801f4b474cfae1db07bc5"},
+    {file = "eventlet-0.40.4-py3-none-any.whl", hash = "sha256:6326c6d0bf55810bece151f7a5750207c610f389ba110ffd1541ed6e5215485b"},
+    {file = "eventlet-0.40.4.tar.gz", hash = "sha256:69bef712b1be18b4930df6f0c495d2a882bf7b63aa111e7b6eeff461cfcaf26f"},
 ]
 
 [package.dependencies]
@@ -706,4 +706,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "351620e17b9ea418f0b2fee3120a906a9334cf727efb61ec5169f4cf6ffc9b87"
+content-hash = "dd843ff131f2e1c13df7da2da857fe98b0f240e628b5eae99165245ca6d03762"
