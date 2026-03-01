@@ -2,5 +2,5 @@ pytest
 boto3
 pandas
 moto
-sqlalchemy<2.0
+sqlalchemy<2.1
 pyathena
