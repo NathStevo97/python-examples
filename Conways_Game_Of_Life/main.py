@@ -117,7 +117,6 @@ def main():
         pygame.display.set_caption("Playing" if playing else "Paused")
 
         for event in pygame.event.get():
-
             # Check for Quit Game
             if event.type == pygame.QUIT:
                 running = False
@@ -136,7 +135,6 @@ def main():
 
             # Quality of Life Processes
             if event.type == pygame.KEYDOWN:
-
                 # Pause / Play
                 if event.key == pygame.K_SPACE:
                     playing = not playing
