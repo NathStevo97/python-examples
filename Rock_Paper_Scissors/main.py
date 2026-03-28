@@ -5,7 +5,7 @@ compPos = positions[random.randint(0, 2)]
 
 gameActive = True
 
-while gameActive == True:
+while gameActive:
     p1Pos = input("\n rock, paper, or scissors? ")
     if p1Pos == compPos:
         print("\n It's a tie!")
@@ -29,5 +29,5 @@ while gameActive == True:
     if playAgain == "Y":
         continue
     else:
-        gameActive == False
+        not gameActive
     compPos = positions[random.randint(0, 2)]

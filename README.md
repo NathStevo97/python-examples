@@ -55,7 +55,7 @@ Generic Rock Paper Scissors example.
 
 Set of tutorial scripts developed following Tech with Tim's video tutorials; used to help understand Selenium for when I use it in my LinkedIn Scraper project.
 
-[Link](https://www.youtube.com/watch?v=Xjv1sY630Uc&list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ)
+[Reference Link](https://www.youtube.com/watch?v=Xjv1sY630Uc&list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ)
 
 ---
 

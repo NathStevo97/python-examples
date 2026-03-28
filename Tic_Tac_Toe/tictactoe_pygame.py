@@ -1,4 +1,5 @@
-import pygame, sys
+import pygame
+import sys
 import numpy as np
 
 pygame.init()
@@ -29,7 +30,6 @@ board = np.zeros((BOARD_ROWS, BOARD_COLS))
 
 
 def draw_lines():
-
     pygame.draw.line(
         screen, LINE_COLOR, (0, SQUARE_SIZE), (WIDTH, SQUARE_SIZE), LINE_WIDTH
     )
@@ -193,7 +193,6 @@ while True:
             sys.exit()
 
         if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
-
             mouseX = event.pos[0]
             mouseY = event.pos[1]
 
@@ -201,7 +200,6 @@ while True:
             clicked_col = int(mouseX // SQUARE_SIZE)
 
             if available_square(clicked_row, clicked_col):
-
                 mark_square(clicked_row, clicked_col, player)
                 if check_win(player):
                     game_over = True

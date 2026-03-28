@@ -9,7 +9,6 @@ URL = "http://www.py4inf.com/"
 
 
 def get_video_links():
-
     # create response object
     response = requests.get(URL)
 
@@ -30,9 +29,7 @@ def get_video_links():
 
 
 def download_videos(extracted_video_links):
-
     for link in extracted_video_links:
-
         # iterate through all links in video_links and download them one by one
 
         # obtain the filename by splitting the URL
@@ -56,7 +53,6 @@ def download_videos(extracted_video_links):
 
 
 if __name__ == "__main__":
-
     # extracting all video links
     extracted_video_links = get_video_links()
 

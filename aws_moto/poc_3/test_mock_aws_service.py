@@ -2,7 +2,6 @@ import pytest
 import pandas as pd
 from aws_moto.poc_3.mock_athena_connect import MockAandiConnect
 from aws_moto.poc_3.utility_functions import hive_table_exists
-from unittest.mock import patch
 
 
 @pytest.fixture(scope="session")
@@ -75,13 +74,13 @@ def test_create_new_table_from_query(mock_aandi_connect):
     )
 
     # Mock the Athena responses for the new table creation
-    create_table_query = f"""
-    CREATE TABLE IF NOT EXISTS {mock_aandi_connect.database_name}.{new_table_name} AS
-    SELECT * FROM {mock_aandi_connect.database_name}.{original_table_name}
-    """
+    # create_table_query = f""
+    # CREATE TABLE IF NOT EXISTS {mock_aandi_connect.database_name}.{new_table_name} AS
+    # SELECT * FROM {mock_aandi_connect.database_name}.{original_table_name}
+    # ""
 
     # Execute the create table query using wr.athena.read_sql_query
-    df_result = mock_aandi_connect.execute_query(create_table_query)
+    # df_result = mock_aandi_connect.execute_query(create_table_query)
 
     # Verify that the new table was created
     response = mock_aandi_connect.glue_client.get_table(

@@ -33,7 +33,6 @@ def gen(num):
 
 
 def draw_grid(positions):
-
     # Draw Cells
     for position in positions:
         col, row = position

@@ -1,7 +1,5 @@
 import os
-from atlassian import Confluence
-from dotenv import load_dotenv, find_dotenv
-from numpy import append
+from dotenv import load_dotenv
 import requests
 import json
 
@@ -10,13 +8,13 @@ load_dotenv()
 
 def main():
     sourcePageId = ""
-    position = "append"
+    # position = "append"
     targetId = ""
     test_url = f"https://{os.getenv('TARGET_SUBDOMAIN')}.atlassian.net/wiki/rest/api/content/{sourcePageId}/move/append/{targetId}"
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {os.getenv('IFS_SANDBOX_CONFLUENCE_USERNAME')}:{os.getenv('IFS_SANDBOX_CONFLUENCE_PAT')}",
-    }
+    # headers = {
+    #     "Accept": "application/json",
+    #     "Authorization": f"Bearer {os.getenv('IFS_SANDBOX_CONFLUENCE_USERNAME')}:{os.getenv('IFS_SANDBOX_CONFLUENCE_PAT')}",
+    # }
 
     response = requests.put(
         test_url,

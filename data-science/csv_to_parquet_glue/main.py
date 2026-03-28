@@ -1,6 +1,5 @@
 import pandas as pd
 import awswrangler as wr
-import boto3
 
 
 def convert_csv_to_parquet_and_create_glue_table(

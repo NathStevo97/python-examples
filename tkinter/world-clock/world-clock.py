@@ -1,9 +1,9 @@
 from datetime import datetime  # convert time data obtained
 import pytz  # collect data from various timeszones
-from tkinter import *  # used to create GUI
-import time  # use the clock function continuously
+import tkinter as tk
+from tkinter import Label  # used to create GUI
 
-root = Tk()
+root = tk.Tk()
 root.geometry("550x100")  # set GUI window size
 
 

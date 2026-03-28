@@ -30,7 +30,6 @@ def printBoard(board):
 
 # Function - Main game.
 def game():
-
     turn = "X"
     count = 0
 

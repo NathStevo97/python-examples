@@ -1,5 +1,4 @@
 # Imports
-from os import pardir
 from bs4 import BeautifulSoup
 import requests
 

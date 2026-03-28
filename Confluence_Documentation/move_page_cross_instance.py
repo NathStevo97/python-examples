@@ -1,15 +1,14 @@
-from platform import python_implementation
 import requests
 import json
 import os
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
 
 
 def main():
     # Source Instance Configuration
-    sourceSpaceKey = ""
+    # sourceSpaceKey = ""
     sourcePageId = ""
     source_url = f"https://{os.getenv('SOURCE_SUBDOMAIN')}.atlassian.net/wiki/rest/api/content/{sourcePageId}?expand=history, version, body"
 
@@ -39,10 +38,10 @@ def main():
     print(json_payload)
 
     # target configuration
-    targetSpaceKey = "~"
-    target_url = (
-        f"https://{os.getenv('TARGET_SUBDOMAIN')}.atlassian.net/wiki/rest/api/content"
-    )
+    # targetSpaceKey = "~"
+    # target_url = (
+    #     f"https://{os.getenv('TARGET_SUBDOMAIN')}.atlassian.net/wiki/rest/api/content"
+    # )
     headers = {
         "Accept": "application/json",
         "Content-Type": "application/json",

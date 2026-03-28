@@ -1,6 +1,5 @@
 import xgboost
 import shap
-import numpy as np
 
 # train XGBoost model
 X, y = shap.datasets.adult()

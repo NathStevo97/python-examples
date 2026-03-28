@@ -1,4 +1,3 @@
-from os import terminal_size
 import random
 
 rangeMin = int(input("\n Enter the lower number for the range: "))

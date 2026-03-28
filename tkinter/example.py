@@ -1,11 +1,8 @@
 # importing tkinter
-# tkinter is the standard Python interface fir GUI development
+# tkinter is the standard Python interface for GUI development
 import tkinter as tk
-from tkinter import *
-from tkinter.ttk import *
 
 # import strftime function - gets system time
-from time import strftime
 from datetime import datetime, timedelta
 
 # create the tkinter window

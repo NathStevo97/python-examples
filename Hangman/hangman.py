@@ -1,9 +1,7 @@
 #################################################
 # Imports
 #################################################
-import os
 import random
-from typing import List
 
 attempts = 0
 guessedLetters = []
@@ -65,8 +63,8 @@ def guess():
         print("please enter 1 letter only")
     elif guess in guessedLetters:
         print("you have already guessed that letter ")
-    elif guess not in (
-        secretWord
+    elif (
+        guess not in (secretWord)
     ):  # if the user guesses a letter not in the word, the guess will be added to incorrectletters and attemtps will increase by 1
         global attempts
         attempts += 1
@@ -178,7 +176,7 @@ def hangman():
     secretWord = (
         wordSelect()
     )  # call wordSelect function to select random word from chosen category
-    secretLength = len(secretWord)
+    # secretLength = len(secretWord)
     global guessedLetters
     guessedLetters = []  # blank at the start of each game as expected
     while attempts < maxAttempts:

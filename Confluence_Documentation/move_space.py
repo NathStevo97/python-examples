@@ -1,7 +1,7 @@
 import requests
 import json
 import os
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -38,7 +38,7 @@ def main():
 
     # Target Confluence Configuration
 
-    targetSpaceKey = ""
+    # targetSpaceKey = ""
     target_url = (
         f"https://{os.getenv('TARGET_SUBDOMAIN')}.atlassian.net/wiki/rest/api/content"
     )

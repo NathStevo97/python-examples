@@ -1,7 +1,5 @@
 # Imports
-from os import pardir
 from bs4 import BeautifulSoup
-import requests
 import re
 
 # Reading an HTML File

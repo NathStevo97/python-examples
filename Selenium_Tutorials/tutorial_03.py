@@ -1,12 +1,9 @@
 # Tutorial 03 - Page Navigation: Clicking buttons, switching pages, etc
 
-import selenium  # import selenium module (if installed) if it's not already there
 from selenium import webdriver  # import required webdriver module
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 
 PATH = "C:\Program Files (x86)\chromedriver_win32\chromedriver.exe"  # define the chromedriver path for reference
 
@@ -25,14 +22,18 @@ link = driver.find_element_by_link_text(
 link.click()  # click the link based on the element found in the above variable
 
 try:
-    element = WebDriverWait(driver, 10).until(
+    element = WebDriverWait(
+        driver, 10
+    ).until(
         EC.presence_of_element_located(
             (By.LINK_TEXT, "Beginner Python Tutorials")
         )  # wait until the prescence of the element of id = main is found before proceeding
     )  # Wait until prescence of element is detected
     element.click()  # click the button
 
-    element = WebDriverWait(driver, 10).until(
+    element = WebDriverWait(
+        driver, 10
+    ).until(
         EC.presence_of_element_located(
             (By.ID, "sow-button-19310003")
         )  # wait until the prescence of the element of id = main is found before proceeding
@@ -46,7 +47,8 @@ try:
     # driver.forward()
     # driver.forward()
 
-except:
+except Exception as e:
+    print(f"THere was a problem: {e}")
     driver.quit()  # if the try doesn't work, exit
 
 driver.quit()

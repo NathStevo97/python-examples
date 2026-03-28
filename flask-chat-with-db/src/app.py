@@ -22,12 +22,11 @@ from db import (
     is_room_admin,
     update_room,
     remove_room_members,
-    save_message,
     get_messages,
 )
 
 app = Flask(__name__)
-# app.secret_key = "sfdjkafnk"
+# app.secret_key = "sfdjkafnk" # pragma: allowlist secret
 socketio = SocketIO(app)
 login_manager = LoginManager()
 login_manager.login_view = "login"

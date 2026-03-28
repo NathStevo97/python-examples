@@ -1,6 +1,5 @@
 ### using XGBoost model with SHAP
 
-import numpy as np
 import pandas as pd
 import xgboost as xgb
 
@@ -18,7 +17,10 @@ data = pd.DataFrame(X, columns=feature_names)
 data["target"] = y
 
 X_train, X_test, y_train, y_test = train_test_split(
-    data[feature_names], data.target, test_size=0.30, random_state=0  ## predictors only
+    data[feature_names],
+    data.target,
+    test_size=0.30,
+    random_state=0,  ## predictors only
 )
 
 ### create and fit model

@@ -1,7 +1,6 @@
 import boto3
 from moto import mock_aws
 from sqlalchemy import create_engine, text
-from sqlalchemy.pool import StaticPool
 import pandas as pd
 from io import BytesIO
 import logging

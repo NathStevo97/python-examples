@@ -2,7 +2,6 @@
 # Imports
 ######################
 import pygame
-import time
 import random
 
 #################################
@@ -85,8 +84,7 @@ def snakeGame():
     foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
 
     while game_active:
-
-        while game_close == True:
+        while game_close:
             dis.fill(blue)
             message("You Lost! Press C-Play Again or Q-Quit", red)
             game_score(Length_of_snake - 1)

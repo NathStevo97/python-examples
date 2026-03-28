@@ -10,7 +10,6 @@
 # - download appropriate chromedriver from the link
 #
 
-import selenium  # import selenium module (if installed) if it's not already there
 from selenium import webdriver  # import required webdriver module
 from selenium.webdriver.common.keys import (
     Keys,
@@ -56,7 +55,9 @@ time.sleep(5)  # pause for observability purposes
 # it's better to have selenium wait until the full value is returned before it moves on as an error may occur
 
 try:
-    main = WebDriverWait(driver, 10).until(
+    main = WebDriverWait(
+        driver, 10
+    ).until(
         EC.presence_of_element_located(
             (By.ID, "main")
         )  # wait until the prescence of the element of id = main is found before proceeding
@@ -73,7 +74,8 @@ try:
         )  # find the entry title element for each article element
         print(header.text)
     # print(main.text) # print all text associated with the id = main element
-except:
+except Exception as e:
+    print(f"THere was a problem: {e}")
     driver.quit()  # if the try doesn't work, exit
 
 time.sleep(5)

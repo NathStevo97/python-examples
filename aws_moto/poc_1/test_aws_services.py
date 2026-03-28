@@ -1,10 +1,7 @@
 # test_aws_services.py
 
-import pytest
 import pandas as pd
 from io import BytesIO
-from mock_clients import s3_client, glue_client, athena_client
-from sqlalchemy_fixture import sqlalchemy_engine
 
 
 def create_glue_table_from_dataframe(

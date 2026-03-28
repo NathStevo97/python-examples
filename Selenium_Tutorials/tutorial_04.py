@@ -1,6 +1,5 @@
 # Tutorial 04 - Action Chains
 # Documentation link:
-import selenium  # import selenium module (if installed) if it's not already there
 from selenium import webdriver  # import required webdriver module
 from selenium.webdriver.common.action_chains import ActionChains
 

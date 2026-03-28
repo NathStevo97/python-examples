@@ -56,7 +56,8 @@ for page in range(1, pages + 1):  # start at page 1 and increase by 1 each time
                 "price": int(price.replace(",", "")),
                 "link": link,
             }  # create dictionary based on items found with price and item link
-        except:
+        except Exception as e:
+            print(f"There was a problem: {e}")
             pass
 
 print(items_found)

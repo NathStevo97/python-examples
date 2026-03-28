@@ -10,7 +10,6 @@
 # - download appropriate chromedriver from the link
 #
 
-import selenium  # import selenium module (if installed) if it's not already there
 from selenium import webdriver  # import required webdriver module
 
 PATH = "C:\Program Files (x86)\chromedriver_win32\chromedriver.exe"  # define the chromedriver path for reference

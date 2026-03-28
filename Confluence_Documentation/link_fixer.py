@@ -2,9 +2,8 @@
 # https://developer.atlassian.com/server/confluence/confluence-rest-api-examples/
 
 import requests
-import json
 import os
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
 
