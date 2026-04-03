@@ -8,11 +8,12 @@ guessedLetters = []
 global missingLetters
 missingLetters = 0
 
-
 ############################################################################################################################
 # Function - Category & Word Selection:
 # User inputs category from displayed list, from which the chosen category file is read to find the random word / secret
 ############################################################################################################################
+
+
 def wordSelect():
     categories = ["animals", "movies"]
     category = str(
@@ -53,6 +54,8 @@ def letterPrint(secret):
 #################################################
 # Function -  Guess Input
 #################################################
+
+
 def guess():
     print("\n\nguessed letters  ", guessedLetters)
     guess = input(
